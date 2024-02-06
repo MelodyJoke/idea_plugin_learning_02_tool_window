@@ -4,15 +4,17 @@
     <name>idea_plugin_learning_02_tool_window Template</name>
     <vendor>melodyjoke</vendor>
 
+    <description>idea plugin learning 02 tool windows</description>
+
     <depends>com.intellij.modules.platform</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.melodyjoke.ideapluginlearning02toolwindow.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-    </extensions>
+        <projectConfigurable groupId="tools" displayName="My Test Config" id="test.id"
+                             instance="com.github.melodyjoke.ideapluginlearning02toolwindow.SettingFactory"/>
 
-    <applicationListeners>
-        <listener class="com.github.melodyjoke.ideapluginlearning02toolwindow.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+        <toolWindow id="Read-Book" secondary="false" anchor="right" icon="/icons/logo.png"
+                    factoryClass="com.github.melodyjoke.ideapluginlearning02toolwindow.ReadFactory"/>
+    </extensions>
 </idea-plugin>
